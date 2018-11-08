@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clock_Tick
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(FindAngleInClock(0, 45) + " degree");
+            Console.WriteLine(FindAngleInClock(0, 30) + " degree");
+            Console.WriteLine(FindAngleInClock(0, 15) + " degree");
+            Console.WriteLine(FindAngleInClock(15, 45) + " degree");
+
+            Console.Read();
+        }
+
+        static internal string FindAngleInClock(int hourHand, int minuteHand)
+        {
+            string angle;
+            var diffInHands = minuteHand - hourHand;
+
+            if (diffInHands < 30)
+            {
+                angle = (diffInHands * 6).ToString();
+            }
+            else
+            {
+                angle = (360 - diffInHands * 6).ToString();
+
+            }
+            return angle;
+        }
+    }
+}
