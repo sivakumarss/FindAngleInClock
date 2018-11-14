@@ -14,6 +14,9 @@ namespace Clock_Tick
             Console.WriteLine(FindAngleInClock(0, 30) + " degree");
             Console.WriteLine(FindAngleInClock(0, 15) + " degree");
             Console.WriteLine(FindAngleInClock(15, 45) + " degree");
+            Console.WriteLine(FindAngleInClock(45, 15) + " degree");
+            Console.WriteLine(FindAngleInClock(15, 50) + " degree");
+            Console.WriteLine(FindAngleInClock(50, 15) + " degree");
 
             Console.Read();
         }
@@ -21,7 +24,7 @@ namespace Clock_Tick
         static internal string FindAngleInClock(int hourHand, int minuteHand)
         {
             string angle;
-            var diffInHands = minuteHand - hourHand;
+            var diffInHands = (minuteHand > hourHand) ? minuteHand - hourHand : hourHand -minuteHand;
 
             if (diffInHands < 30)
             {
